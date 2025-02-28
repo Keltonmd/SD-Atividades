@@ -287,7 +287,7 @@ def acessar_conta():
             resposta = json.loads(cliente_Conexao.recv(1024).decode())
             if resposta['validacao'] == 'True':
                 limpar_Tela()
-                print('Seja bem vindo!\n')
+                print(f'Seja bem vindo {resposta["Nome"]}!\n')
                 tipo = 'home'
                 username = userName
                 break
