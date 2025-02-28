@@ -156,5 +156,4 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as endpoint:
     with concurrent.futures.ThreadPoolExecutor(20) as workers:
         while True:
             conexao,endereco = endpoint.accept()
-            print(f'novo cliente conectado: {endereco}')
             workers.submit(handle_client,conexao, endereco)
