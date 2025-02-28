@@ -442,8 +442,8 @@ while True:
         receber_email()
         escolher_mensagens()
     elif opc == 6:
-        desconectar_servidor()
-        break
+        username = None
+        tipo = 'login'
     elif opc == 0:
         desconectar_servidor()
         break
