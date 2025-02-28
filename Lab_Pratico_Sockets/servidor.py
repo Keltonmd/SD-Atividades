@@ -63,7 +63,7 @@ def login(conexao, mensagem, cliente):
     senha_hash = usuarios[username].get('Senha')
 
     if bcrypt.checkpw(senha.encode(), senha_hash):
-        conexao.send(json.dumps({"validacao": "True"}).encode())
+        conexao.send(json.dumps({"validacao": "True", "Nome": usuarios[username].get('Nome')}).encode())
         print(f"Realizando Login para o cliente {cliente}: {username}. Login Com Sucesso")
     else:
         conexao.send(json.dumps({"validacao": "False", 'erro': "Senha incorreta!"}).encode())
@@ -147,7 +147,7 @@ def handle_client(conexao, cliente):
 
 
 usuarios = {}
-ENDPOINT = ('0.0.0.0', 8888)
+ENDPOINT = ('0.0.0.0', 7777)
 print("Iniciando")
 
 with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as endpoint:
