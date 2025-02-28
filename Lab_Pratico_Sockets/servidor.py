@@ -147,7 +147,7 @@ def handle_client(conexao, cliente):
 
 
 usuarios = {}
-ENDPOINT = ('0.0.0.0', 7777)
+ENDPOINT = ('0.0.0.0', 8888)
 print("Iniciando")
 
 with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as endpoint:
